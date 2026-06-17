@@ -1,0 +1,43 @@
+import {useState} from 'react'
+import { AiFillCaretRight } from "react-icons/ai";
+const reactionArray=[
+    "🥲",
+    "😞",
+    "😔",
+    "😟",
+    "🙁",
+    "😊",
+    "😄",
+    "😁",
+    "😇",
+    "😉",
+    "😍",
+];
+function ArrayTask(){
+    const[count,setCount]=useState(0);
+
+    const handleClick =()=>{
+        if (count<reactionArray.length-1){
+            setCount(count +1);
+        }
+        else{
+            setCount(count +1)
+        }
+    };
+
+  return (
+    <div className="container">
+        <h2>
+        Likes:{count}
+        {reactionArray[count] || reactionArray[reactionArray.length-1]}
+        </h2>
+        <AiFillCaretRight
+        size={40}
+        onClick={handleClick}
+        style={{cursor:"pointer"}} />
+    </div>
+    
+  );
+}
+
+export default ArrayTask
